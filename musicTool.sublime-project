@@ -1,0 +1,26 @@
+{
+	"folders":
+	[
+		{
+			"path": "./",
+            "name": "musicTool",
+            "file_exclude_patterns":
+            [
+                "*.sublime-*",
+                ".DS_Store",
+                ".gitignore",
+                ".gitattributes",
+                ".nodemonignore",
+                ".jshintrc",
+                ".editorconfig",
+                ".bowerrc",
+                ".travis.yml"
+            ],
+            "folder_exclude_patterns":
+            [
+                "node_modules",
+                ".tmp"
+            ]
+		}
+	]
+}
