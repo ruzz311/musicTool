@@ -1,0 +1,23 @@
+{
+  "name": "band.js",
+  "version": "0.3.0",
+  "main": "build/band.min.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/meenie/band.js",
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.0",
+    "commit": "67f86dac10dd7a060176093b88945e815c39c58c"
+  },
+  "_source": "git://github.com/meenie/band.js.git",
+  "_target": "~0.3.0",
+  "_originalSource": "band.js",
+  "_direct": true
+}

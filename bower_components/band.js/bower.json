@@ -1,0 +1,12 @@
+{
+  "name": "band.js",
+  "version": "0.3.0",
+  "main": "build/band.min.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
