@@ -1,8 +1,8 @@
 # Music Tool
 
-## Why
+Assist musicians with tools and references for improvisation and misc music theory fun-times.
 
-Assist a musician with improvisation with references to:
+## What it should do
 
 ### Reference to circle of 5ths (ref.2)
   ```
