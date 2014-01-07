@@ -20,3 +20,46 @@ body {
     line-height: 1;
     letter-spacing: -1px;
 }
+
+
+
+/* GUITAR */
+.guitar {
+
+}
+
+.guitar .string {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 300px;
+}
+.guitar .string:nth-child(1){
+    background-color: red;
+}
+.guitar .string:nth-child(2){
+    background-color: yellow;
+    left: 20px;
+}
+.guitar .string:nth-child(3){
+    background-color: blue;
+    left: 40px;
+}
+.guitar .string:nth-child(4){
+    background-color: orange;
+    left: 60px;
+}
+.guitar .string:nth-child(5){
+    background-color: green;
+    left: 80px;
+}
+.guitar .string:nth-child(6){
+    background-color: purple;
+    left: 100px;
+}
+
+.guitar .string > div {
+    height: 20px;
+    border-bottom: 1px solid #000;
+}
