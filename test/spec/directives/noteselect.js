@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: rootSelector', function () {
+describe('Directive: noteSelect', function () {
 
   // load the directive's module
   beforeEach(module('angularMusicToolApp'));
@@ -13,8 +13,8 @@ describe('Directive: rootSelector', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<root-selector></root-selector>');
+    element = angular.element('<note-selector></note-selector>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the rootSelector directive');
+    expect(element.text()).toBe('this is the noteSelect directive');
   }));
 });
