@@ -8,7 +8,7 @@
             [
                 "*.sublime-*",
                 ".DS_Store",
-                ".gitignore",
+                ".gitignores",
                 ".gitattributes",
                 ".nodemonignore",
                 ".jshintrc",

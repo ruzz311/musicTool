@@ -1,159 +1,36 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#">Note Lab</a>
-  </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse pull-right">
-        <ul class="nav navbar-nav">
-            <li class="navbar-text">({{ rootNote.fq() | number:4 }} Hz)</li>
-            <li class="navbar-btn">
-                <button class="btn btn-default" ng-click="playRoot(root);">Listen...</button>
-            </li>
-            <li class="navbar-text">
-                <select ng-model="root" class="input-md">
-                <option value="C4">C</option>
-                <option value="C#4">C#</option>
-                <option value="Db4">Db</option>
-                <option value="D4">D</option>
-                <option value="D#4">D#</option>
-                <option value="Eb4">Eb</option>
-                <option value="E4">E</option>
-                <option value="E#4">E#</option>
-                <option value="F4">F</option>
-                <option value="F#4">F#</option>
-                <option value="Gb4">Gb</option>
-                <option value="G4">G</option>
-                <option value="G#4">G#</option>
-                <option value="Ab4">Ab</option>
-                <option value="A4">A</option>
-                <option value="A#4">A#</option>
-                <option value="Bb4">Bb</option>
-                <option value="B4">B</option>
-                <option value="B#4">B#</option>
-                </select>
-            </li>
-        </ul>
-    </div><!-- /.navbar-collapse -->
-</nav>
-
-<!--
-<div class="row">
-    <div class="span12">
-        <h1>Note</h1>
-        <select ng-model="root" class="input-lg">
-            <option value="C4">C</option>
-            <option value="C#4">C#</option>
-            <option value="Db4">Db</option>
-            <option value="D4">D</option>
-            <option value="D#4">D#</option>
-            <option value="Eb4">Eb</option>
-            <option value="E4">E</option>
-            <option value="E#4">E#</option>
-            <option value="F4">F</option>
-            <option value="F#4">F#</option>
-            <option value="Gb4">Gb</option>
-            <option value="G4">G</option>
-            <option value="G#4">G#</option>
-            <option value="Ab4">Ab</option>
-            <option value="A4">A</option>
-            <option value="A#4">A#</option>
-            <option value="Bb4">Bb</option>
-            <option value="B4">B</option>
-            <option value="B#4">B#</option>
-        </select>
-        <button class="btn btn-default" ng-click="playRoot(root);">Listen...</button>
-        <br/>
-        ({{ rootNote.fq() | number:4 }} Hz)
-    </div>
-</div>
--->
-
-<!-- Chord -->
-<h2>Chord</h2>
-<div class="row">
-    <div class="span2">
-        <input id="chordColor" ng-model="chordColor" placeholder="color" class="input-lg">
-    </div>
-    <div class="span4">
-        <dl>
-            <dt>Notes</dt>
-            <dd>
-                <span ng-repeat="note in getNotesInChord()">
-                    {{ note.name() | uppercase }}{{ note.accidental() }}
-                </span>
-            </dd>
-
-            <dt>Chord-Type</dt>
-            <dd>{{ chord.chordType() }}</dd>
-            
-            <!--
-            <dt>Parallel</dt>
-            <dd>{{ chord.parallel() }}</dd>
-            -->
-
-            <dt>Quality</dt>
-            <dd>{{ chord.quality() }}</dd>
-        </dl>
-    </div>
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#">About</a></li>
+    <li><a ng-href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">angular musicTool</h3>
 </div>
 
-<!-- Scale -->
-<h2>Scale</h2>
-<div class="row">
-    <div class="span2">
-        <select id="scaleMode" ng-model="scaleMode" class="input-lg">
-            <option ng-repeat="mode in scaleModes">{{mode}}</option>
-        </select>
-    </div>
-    <div class="span4">
-        {{ rootNote.name() | uppercase }}{{ rootNote.accidental() }} {{scaleMode}}
-        <br/>
-        <span ng-repeat="note in getScale().notes()">
-            {{ note.name() | uppercase }}
-        </span>
-        <br/>
-        <span ng-repeat="note in getScale().scale">
-            {{ note }}
-        </span>
-    </div>
+<div class="jumbotron">
+  <h1>'Allo, 'Allo!</h1>
+  <p class="lead">
+    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
+    Always a pleasure scaffolding your apps.
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
 </div>
 
-<!--
-<div class="guitar scale-CMaj position-2">
-    <div class="string string-e">
-        <div class="f5"></div>
-        <div class="f7"></div>
-        <div class="f8"></div>
-    </div>
-    <div class="string string-b">
-        <div class="f5"></div>
-        <div class="f7"></div>
-    </div>
-    <div class="string string-g">
-        <div class="f5"></div>
-        <div class="f7"></div>
-        <div class="f8"></div>
-    </div>
-    <div class="string string-d">
-        <div class="f5"></div>
-        <div class="f7"></div>
-        <div class="f8"></div>
-    </div>
-    <div class="string string-a">
-        <div class="f5"></div>
-        <div class="f7"></div>
-        <div class="f9"></div>
-    </div>
-    <div class="string string-E">
-        <div class="f8"></div>
-    </div>
+<div class="row marketing">
+  <h4>HTML5 Boilerplate</h4>
+  <p>
+    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+  </p>
+
+  <h4>Angular</h4>
+  <p>
+    AngularJS is a toolset for building the framework most suited to your application development.
+  </p>
+
+  <h4>Karma</h4>
+  <p>Spectacular Test Runner for JavaScript.</p>
 </div>
--->
+
+<div class="footer">
+  <p>♥ from the Yeoman team</p>
+</div>

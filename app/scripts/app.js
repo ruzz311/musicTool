@@ -3,14 +3,16 @@
 angular.module('angularMusicToolApp', [
   'ngCookies',
   'ngResource',
-  'ngSanitize'
-]).config(function ($routeProvider) {
-  $routeProvider
-    .when('/', {
-      templateUrl: 'views/main.html',
-      controller: 'MainCtrl'
-    })
-    .otherwise({
-      redirectTo: '/'
-    });
-});
+  'ngSanitize',
+  'ngRoute'
+])
+  .config(function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });
