@@ -1,26 +1,40 @@
 {
-	"folders":
-	[
-		{
-			"path": "./",
-            "name": "musicTool",
+    "folders":
+    [
+        {
+            "path": "./app",
+            "name": "app",
+            "file_exclude_patterns":
+            [
+                ".DS_Store",
+                ".buildignore",
+                ".htaccess"
+            ]
+        },
+        {
+            "path": "./test",
+            "name": "test",
             "file_exclude_patterns":
             [
                 "*.sublime-*",
                 ".DS_Store",
-                ".gitignores",
+                ".gitignore",
                 ".gitattributes",
                 ".nodemonignore",
                 ".jshintrc",
                 ".editorconfig",
                 ".bowerrc",
                 ".travis.yml"
-            ],
-            "folder_exclude_patterns":
-            [
-                "node_modules",
-                ".tmp"
             ]
-		}
-	]
+        },
+        {
+            "path": "./",
+            "name": "- All Files -",
+            "file_exclude_patterns":
+            [
+                "*.sublime-*",
+                ".DS_Store"
+            ]
+        }
+    ]
 }
