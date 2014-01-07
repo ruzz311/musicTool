@@ -2,6 +2,9 @@
 
 angular.module('angularMusicToolApp')
   .controller('RootCtrl', function ($scope) {
+    
+    $scope.root = 'C';
+
     $scope.notesCollection = [
       'C',
       'D',

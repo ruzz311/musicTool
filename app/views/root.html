@@ -1,6 +1,8 @@
 <p>This is the root view.</p>
 
-<select>
+<p>Chosen root is {{root}}</p>
+
+<select ng-model="root">
     <option ng-repeat="n in notesCollection">{{n}}<option>
 </select>
 
