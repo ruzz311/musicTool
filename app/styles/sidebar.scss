@@ -2,13 +2,14 @@ $sidebarBgColor: #333;
 $sidebarTxtColor: #DEDEDE;
 
 .sidebar {
+  background-color: $sidebarBgColor;
+  box-shadow: -2px 0px 20px rgba(0, 0, 0, .5) inset;
   width: 60px;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: $sidebarBgColor;
   ul {
     list-style: none;
     padding: 0;
