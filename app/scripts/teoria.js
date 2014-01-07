@@ -513,7 +513,7 @@
         stroke = (count >= 0) ? '\'' : ',';
       }
 
-      solfege = kIntervalSolfege[interval.simple(true)];
+      solfege = kIntervalSolfege[interval.simple(true).toString()];
       return (showOctaves) ? pad(solfege, stroke, Math.abs(count)) : solfege;
     },
 
@@ -552,7 +552,7 @@
       val = (val.direction() === 'down' || (num > 7 && (num - 1) % 7 === 0)) ?
         val.invert() : val;
 
-      return scale.scale.indexOf(val.simple(true)) + 1;
+      return scale.scale.indexOf(val.simple(true).toString()) + 1;
     },
 
     /**
@@ -622,16 +622,11 @@
 
     simple: function(ignore) {
       var number = this.value();
-      number = number > 8 || number < -8 ?
-        ((number % 7) ? number % 7 : 7) : number;
+      if (number > 8 || number < -8)
+          number = number % 7 || (number > 0 ? 7 : -7);
 
-      return this.quality() + (ignore ? Math.abs(number) : number);
-    },
-
-    compound: function(ignore) {
-      var number = ignore ? this.number() : this.value();
-
-      return this.quality() + number;
+      var str = this.quality() + (ignore ? Math.abs(number) : number);
+      return teoria.interval(str);
     },
 
     isCompound: function() {
@@ -669,7 +664,8 @@
     },
 
     equal: function(interval) {
-      return sum(sub(this.coord, interval.coord)) === 0;
+        return this.coord[0] === interval.coord[0] &&
+            this.coord[1] === interval.coord[1];
     },
 
     greater: function(interval) {
@@ -686,8 +682,11 @@
       return !this.equal(interval) && !this.greater(interval);
     },
 
-    toString: function() {
-      return this.compound();
+    toString: function(ignore) {
+      // If given true, return the positive value
+      var number = ignore ? this.number() : this.value();
+
+      return this.quality() + number;
     }
   };
 
@@ -931,7 +930,7 @@
 
       this._voicing = [bassInterval];
       for (i = 0; i < length; i++) {
-        if (intervals[i].simple() === bass)
+        if (intervals[i].simple().equal(bass))
           continue;
 
         this._voicing.push(intervals[i]);
@@ -1013,16 +1012,16 @@
       }
 
       third = (third.direction() === 'down') ? third.invert() : third;
-      third = third.simple();
+      third = third.simple().toString();
 
       if (fifth) {
         fifth = (fifth.direction === 'down') ? fifth.invert() : fifth;
-        fifth = fifth.simple();
+        fifth = fifth.simple().toString();
       }
 
       if (seventh) {
         seventh = (seventh.direction === 'down') ? seventh.invert() : seventh;
-        seventh = seventh.simple();
+        seventh = seventh.simple().toString();
       }
 
       if (third === 'M3') {
@@ -1214,6 +1213,12 @@
     ['P1', 'm3', 'P4', 'A4', 'P5', 'm7'];
   teoria.scale.scales.flamenco =
     ['P1', 'm2', 'M3', 'P4', 'P5', 'm6', 'M7'];
+  teoria.scale.scales.doubleharmonic =
+    ['P1', 'm2', 'M3', 'P4', 'P5', 'm6', 'M7'];
+  teoria.scale.scales.harmonicminor =
+    ['P1', 'M2', 'm3', 'P4', 'P5', 'm6', 'M7'];
+  teoria.scale.scales.melodicminor =
+    ['P1', 'M2', 'm3', 'P4', 'P5', 'M6', 'M7'];
 
 
   teoria.TeoriaNote = TeoriaNote;
@@ -1231,3 +1236,4 @@
   else if (typeof window !== 'undefined')
     window.teoria = teoria;
 })();
+
