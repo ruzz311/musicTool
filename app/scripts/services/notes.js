@@ -3,6 +3,7 @@
 angular.module('angularMusicToolApp')
   .service('Notes', function Notes() {
     // AngularJS will instantiate a singleton by calling 'new' on this function
+    // @TODO: probably should create teoria note objects here
     return [
       {
         'name': 'C'
