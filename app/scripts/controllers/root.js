@@ -2,9 +2,13 @@
 
 angular.module('angularMusicToolApp')
   .controller('RootCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+    $scope.notesCollection = [
+      'C',
+      'D',
+      'E',
+      'F',
+      'G',
+      'A',
+      'B'
     ];
   });
