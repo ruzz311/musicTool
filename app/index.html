@@ -26,6 +26,13 @@
     <!-- Add your site or application content here -->
     <div class="sidebar" ng-controller="SidebarCtrl">
       <ul class="sidebar-nav">
+        <!--
+        @TODO: use state provider instead: https://github.com/angular-ui/ui-router
+        <li ng-class="{ active: isActive('/')}"><a ui-sref="/">Home</a></li>
+        <li ng-class="{ active: isActive('/root')}"><a ui-sref="root">Root</a></li>
+        <li ng-class="{ active: isActive('/chord')}"><a ui-sref="chord">Chord</a></li>
+        <li ng-class="{ active: isActive('/progression')}"><a ui-sref="progression">Progression</a></li>
+        -->
         <li ng-class="{ active: isActive('/')}"><a href="/">Home</a></li>
         <li ng-class="{ active: isActive('/root')}"><a href="#/root">Root</a></li>
         <li ng-class="{ active: isActive('/chord')}"><a href="#/chord">Chord</a></li>
